@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Whatsapp</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+<body>
+    
+    <div id="app">
+        <div id="display" class="vh-100 d-flex justify-content-center align-items-center">
+            <div id="display-conversazione" class="d-flex">
+                
+                <!-- left column -->
+                <div class="col-4 h-100 d-flex flex-column bg-secondary-subtle">
+                   
+                    <!-- account-nav -->
+                    <div class="w-100 h-10 bg-secondary-subtle d-flex align-items-center justify-content-between">
+                        
+                        <!-- account-nav-left -->
+                        <div class="h-100 d-flex align-items-center justify-content-between w-25 ms-2">
+                            <img src="./img/avatar_io.jpg" alt="avatar-personale" class="h-75">
+                            <h5>Sofia</h5>
+                        </div>
+
+                        <!-- account-nav-right -->
+                        <div class="d-flex justify-content-around w-25 me-2">
+                            <i class="fa-solid fa-circle-notch fa-2xl" style="color: #696969;"></i>
+                            <i class="fa-solid fa-message fa-2xl" style="color: #696969;"></i>
+                            <i class="fa-solid fa-ellipsis-vertical fa-2xl" style="color: #696969;"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- set-up notifiche -->
+                    <div class="w-100 h-12 bg-info d-flex justify-content-start align-items-center">
+                        <div class="radius mx-2">
+                            <i class="fa-solid fa-bell-slash fa-2xl" style="color: #0DCAF0;"></i>
+                        </div>
+                        <div>
+                            <h5>Ricevi notifiche di nuovi messaggi</h5>
+                            <span class="text-decoration-underline text-dark-emphasis">Attiva notifiche desktop</span>
+                        </div>
+                    </div>
+
+                    <!-- input ricerca -->
+                    <div class="input-group mb-3 w-95 mx-auto mt-2">
+                        <button class="btn bg-white" type="button" id="button-addon1">
+                            <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #969696;"></i>
+                        </button>
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    </div>
+
+                    <!-- Lista conversazioni -->
+                    <div v-for="(element,index) in contacts" class="w-100 h-10 bg-white d-flex align-items-center justify-content-between"> 
+                        <div class="h-100 d-flex align-items-center justify-content-between w-50">
+                            <img src="{{element.avatar}}" alt="avatar-utente" class="h-75">
+                            <div>
+                                <h5>{{element.name}}</h5>
+                                <span>Ultimo messaggio inviato</span>
+                            </div>
+                        </div>                        
+                        <div class="d-flex justify-content-around align-items-start h-100 pt-2 w-25 me-2">
+                            <span>12.00</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+               
+                <!-- right column -->
+                <div class="col-8 h-100 d-flex flex-column bg-secondary-subtle">
+                    
+                    <!-- account-conversazione -->
+                    <div class="w-100 h-10 bg-secondary-subtle d-flex align-items-center justify-content-between">
+                        
+                        <!-- account-conversazione-left -->
+                        <div class="h-100 d-flex align-items-center w-50 ms-2">
+                            <img src="./img/avatar_1.jpg" alt="avatar-personale" class="h-75 mx-2">
+                            <div>
+                                <h5>Michele</h5>
+                                <span>Ultimo accesso oggi alle 12.00</span>
+                            </div>
+                        </div>
+
+                        <!-- account-conversazione-right -->
+                        <div class="d-flex justify-content-around w-20 me-2">
+                            <i class="fa-solid fa-magnifying-glass fa-2xl" style="color: #696969;"></i>
+                            <i class="fa-solid fa-paperclip fa-2xl" style="color: #696969;"></i>
+                            <i class="fa-solid fa-ellipsis-vertical fa-2xl" style="color: #696969;"></i>
+                        </div>
+                    </div>
+                    <!-- Campo conversazione -->
+                    <div id="campo-conversazione" class="h-80">
+
+                    </div>
+                    <!-- Inserimento messaggio -->
+                    <div class="w-100 bg-secondary-subtle h-10 d-flex justify-content-between align-items-center">
+                        <div class="col-1 d-flex justify-content-center align-items-center">
+                            <i class="fa-regular fa-face-smile fa-2xl" style="color: #696969;"></i>
+                        </div>
+                        <div class="col-10">
+                            <div class="input-group input-group-lg">
+                                <input type="text" class="form-control" placeholder="Scrivi un messaggio..." aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                            </div>
+                        </div>
+                        <div class="col-1 d-flex justify-content-center align-items-center">
+                            <i class="fa-solid fa-microphone fa-2xl" style="color: #696969;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/main.js "></script>
+</body>
+</html>
