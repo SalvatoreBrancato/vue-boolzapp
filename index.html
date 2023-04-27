@@ -38,7 +38,7 @@
                     <!-- set-up notifiche -->
                     <div class="w-100 h-12 bg-info d-flex justify-content-start align-items-center">
                         <div class="radius mx-2">
-                            <i class="fa-solid fa-bell-slash fa-2xl" style="color: #0DCAF0;"></i>
+                            <i class="fa-solid fa-bell-slash fa-xl" style="color: #0DCAF0;"></i>
                         </div>
                         <div>
                             <h5>Ricevi notifiche di nuovi messaggi</h5>
@@ -55,9 +55,9 @@
                     </div>
 
                     <!-- Lista conversazioni -->
-                    <div v-for="(element,index) in contacts" class="w-100 h-10 bg-white d-flex align-items-center justify-content-between"> 
+                    <div v-for="(element,index) in contacts" class="w-100 h-9 bg-white d-flex align-items-center justify-content-between"> 
                         <div class="h-100 d-flex align-items-center justify-content-between w-50">
-                            <img src="{{element.avatar}}" alt="avatar-utente" class="h-75">
+                            <img :src="element.avatar" alt="avatar-utente" class="h-75">
                             <div>
                                 <h5>{{element.name}}</h5>
                                 <span>Ultimo messaggio inviato</span>
@@ -94,8 +94,10 @@
                         </div>
                     </div>
                     <!-- Campo conversazione -->
-                    <div id="campo-conversazione" class="h-80">
-
+                    <div id="campo-conversazione" class="h-80 d-flex flex-column">
+                        <span id="mess-sent" class="sent">Hai portato a spasso il cane</span>
+                        <span id="mess-sent" class="sent">Ricordati di stendere i panni</span>
+                        <span id="mess-recived" class="recived">Tutto fatto!</span>
                     </div>
                     <!-- Inserimento messaggio -->
                     <div class="w-100 bg-secondary-subtle h-10 d-flex justify-content-between align-items-center">
@@ -115,6 +117,8 @@
             </div>
         </div>
     </div>
+
+
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/main.js "></script>
 </body>
