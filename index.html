@@ -104,7 +104,7 @@
                         </div>
                         <div class="col-10">
                             <div class="input-group input-group-lg">
-                                <input type="text" class="form-control" placeholder="Scrivi un messaggio..." aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                                <input type="text" class="form-control" placeholder="Scrivi un messaggio..." aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" v-model="testoMessaggio" @keyup.enter="scriviMessaggio">
                             </div>
                         </div>
                         <div class="col-1 d-flex justify-content-center align-items-center">

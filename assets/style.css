@@ -29,24 +29,6 @@
     overflow-y: auto;
 }
 
-.mess-sent{
-    align-self: flex-end;
-    background-color: rgb(25, 197, 25);
-    padding: 10px;
-    border-radius: 15px;
-    margin-top: 20px;
-    margin-right: 20px;
-}
-
-.mess-recived{
-    align-self: flex-start;
-    background-color: white;
-    padding: 10px;
-    border-radius: 15px;
-    margin-top: 20px;
-    margin-left: 20px;
-    
-}
 /* TAG */
 img{
     border-radius: 50%;
@@ -88,4 +70,23 @@ button{
 
 .message{
     border-radius: 20px;
+}
+
+.mess-sent{
+    align-self: flex-end;
+    background-color: rgb(25, 197, 25);
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.mess-recived{
+    align-self: flex-start;
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-left: 20px;
+    
 }

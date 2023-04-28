@@ -165,7 +165,8 @@ createApp({
                     ],
                 }
             ],
-            indiceDinamico: 0
+            indiceDinamico: 0,
+            testoMessaggio : ``
         }
     },created(){
     
@@ -173,7 +174,23 @@ createApp({
         recuperaIndice(i){
             this.indiceDinamico = i
             console.log(i)
-        }
-       
+        },
+
+        scriviMessaggio(){
+            this.contacts[this.indiceDinamico].messages.push({
+                date: '10/01/2020 15:51:00',
+                message: this.testoMessaggio,
+                status: `sent`
+            })
+            this.testoMessaggio = ``
+            
+            setTimeout(() => {
+                this.contacts[this.indiceDinamico].messages.push({
+                    date: '10/01/2020 15:51:00',
+                    message: `Va bene a più tardi`,
+                    status: `recived`
+                })
+            }, 1000);
+        }       
     }
 }).mount(`#app`)
