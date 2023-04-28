@@ -10,6 +10,15 @@
     background: linear-gradient(180deg, rgba(34,195,84,1) 0%, rgba(245,235,207,1) 20%);
 }
 
+#contact-user{
+    background-color: white;
+    cursor: pointer;
+  }
+#contact-user:hover{
+    background-color: rgb(209, 209, 209);
+    cursor: pointer;
+}
+
 #display-conversazione{
     width: 90%;
     height: 90%;
@@ -17,10 +26,10 @@
 
 #campo-conversazione{
     background-image: url(../img/mine.jpg);
-    
+    overflow-y: auto;
 }
 
-#mess-sent{
+.mess-sent{
     align-self: flex-end;
     background-color: rgb(25, 197, 25);
     padding: 10px;
@@ -29,7 +38,7 @@
     margin-right: 20px;
 }
 
-#mess-recived{
+.mess-recived{
     align-self: flex-start;
     background-color: white;
     padding: 10px;

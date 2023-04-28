@@ -55,9 +55,9 @@
                     </div>
 
                     <!-- Lista conversazioni -->
-                    <div v-for="(element,index) in contacts" class="w-100 h-9 bg-white d-flex align-items-center justify-content-between"> 
+                    <div v-for="(element,index) in contacts" id="contact-user"  class="w-100 h-9 d-flex align-items-center justify-content-between" @click="recuperaIndice(index)"> 
                         <div class="h-100 d-flex align-items-center justify-content-between w-50">
-                            <img :src="element.avatar" alt="avatar-utente" class="h-75">
+                            <img :src="element.avatar" alt="avatar-utente" class="h-75 ms-2">
                             <div>
                                 <h5>{{element.name}}</h5>
                                 <span>Ultimo messaggio inviato</span>
@@ -79,9 +79,9 @@
                         
                         <!-- account-conversazione-left -->
                         <div class="h-100 d-flex align-items-center w-50 ms-2">
-                            <img src="./img/avatar_1.jpg" alt="avatar-personale" class="h-75 mx-2">
+                            <img :src="contacts[indiceDinamico].avatar" alt="avatar-personale" class="h-75 mx-2">
                             <div>
-                                <h5>Michele</h5>
+                                <h5>{{contacts[indiceDinamico].name}}</h5>
                                 <span>Ultimo accesso oggi alle 12.00</span>
                             </div>
                         </div>
@@ -95,9 +95,7 @@
                     </div>
                     <!-- Campo conversazione -->
                     <div id="campo-conversazione" class="h-80 d-flex flex-column">
-                        <span id="mess-sent" class="sent">Hai portato a spasso il cane</span>
-                        <span id="mess-sent" class="sent">Ricordati di stendere i panni</span>
-                        <span id="mess-recived" class="recived">Tutto fatto!</span>
+                        <span  v-for="(element,index) in contacts[indiceDinamico].messages"  :class="element.status == `sent` ? `mess-sent` : `mess-recived`">{{element.message}}</span>
                     </div>
                     <!-- Inserimento messaggio -->
                     <div class="w-100 bg-secondary-subtle h-10 d-flex justify-content-between align-items-center">

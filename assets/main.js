@@ -164,12 +164,16 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
+            indiceDinamico: 0
         }
     },created(){
     
     }, methods:{
-        
+        recuperaIndice(i){
+            this.indiceDinamico = i
+            console.log(i)
+        }
        
     }
 }).mount(`#app`)
